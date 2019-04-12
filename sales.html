@@ -4,31 +4,40 @@
         <title>
             Salmon Cookies
         </title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
 
     <body>
         <header>
+
             <h1>
                 Salmon Cookies
             </h1>
+
+            <form id ="new-store">
+                <fieldset>
+                    <legend>Add a new store</legend>
+
+                    <label for="storename">Store name:</label>
+                    <input id="storename" type="text" required/>
+
+                    <label for="minimumcustomers">Minimum Customers:</label>
+                    <input id="minimumcustomers" type="text" required/>
+
+                    <label for="maximumcustomers">Maximum Customers:</label>
+                    <input id="maximumcustomers" type="text" required/>
+
+                    <button>Add New Store</button>
+
+
+                </fieldset>
+            </form>
             
         </header>
         <main>
 
             <table id="cookie-stand"></table>
-            <!-- <h2>1st and Pike</h2>
-            <ul id="first-and-pike"></ul>
-            <h2>SeaTac Airport</h2>
-            <ul id="seatac-airport"></ul>
-            <h2>Seattle Center</h2>
-            <ul id="seattle-center"></ul>
-            <h2>Capitol Hill</h2>
-            <ul id="capitol-hill"></ul>
-            <h2>Alki</h2>
-            <ul id="alki"></ul> -->
-
-            
+        
 
         </main>
         <script src="js/app.js"> </script>
