@@ -1,6 +1,7 @@
 
 'use strict';
 
+//Global variables
 var hours = [
   '6am',
   '7am',
@@ -24,6 +25,7 @@ var referenceTable = document.getElementById('cookie-stand');
 
 var grandTotal = 0;
 
+//Header
 function renderTableHeader(){
   var tr = document.createElement('tr');
   var th = document.createElement('th');
@@ -40,6 +42,8 @@ function renderTableHeader(){
   tr.append(th);
   referenceTable.append(tr);
 }
+
+//Constuctor
 function Store(location, minCustomer, maxCustomer, avgCookieSale) {
   this.minCustomer = minCustomer;
   this.maxCustomer = maxCustomer;
@@ -90,23 +94,20 @@ function Store(location, minCustomer, maxCustomer, avgCookieSale) {
     this.dailyTotal();
     this.render();
   };
-
 }
 
-
-
-
+//Footer
 function renderFooter() {
   var tfoot = document.createElement('tfoot');
   var tr = document.createElement('tr');
   var td = document.createElement('td');
   td.textContent = ' Totals:';
   tr.append(td);
-
-  for(var i = 0; i < hours.length; i++);{
+  // Ryan - code smells check what is
+  for(var r = 0; r < hours.length; r++){
     var hourlyTotal = 0;
     for(var j = 0; j < allStores.length; j++){
-      hourlyTotal += allStores[j].cookiesPerHour[i];
+      hourlyTotal += allStores[j].cookiesPerHour[r];
     }
     grandTotal += hourlyTotal;
     td = document.createElement('td');
@@ -118,9 +119,7 @@ function renderFooter() {
   tr.append(td);
   tfoot.append(tr);
   referenceTable.append(tfoot);
-
 }
-
 
 var firstAndPike = new Store('First & Pike', 23, 65, 6.3);
 var seaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
@@ -136,27 +135,28 @@ CapitolHill.dailyStats();
 alki.dailyStats();
 renderFooter();
 
+// Add New Store event
+// var addNewStore (event) {
+//   event.preventDefault();
 
+//   var storeName = document.getElementById('storeName').value;
+//   var minCustomer = document.getElementById('minCustomer').value;
+//   var maxCustomer = document,getElementById('maxCustomer').value;
+//   var avgCookieSale = document.getElementById('avgCookieSale').value;
+//   var minimumCustomerNumber = event.target.minCustomer.value;
 
-//---------------------------------
-//Style changer
-//---------------------------------
-// var redGreenButton = document.getElementById('red-green');
-// var grayButton = document.getElementById('gray');
-// var clearButton = document.getElementById('clear');
+//   console.log(minCustomer);
 
-// function onRedGreenButtonClick() {
-//   var referenceTable = document.getElementById('dog-table');
+//   var newStore = new Store(Number(minCustomer), Number(maxCustomer), Number (avgCookieSale), storeName);
+
+//   var tableBody = document.getElementById('storeLocation');
+//   tableBody.append(newStore.render());
+//   location.push(newStore);
+
+//   var footer = document.getElementById('totalCookies');
+//   footer.innerHTML = '';
+//   renderFooter (location);
 // }
-// function onGrayButtonClick () {
 
-// }
-// function conClearButtonClick() {
-
-// }
-
-// redGreenButton.addEventListener('click', onRedGreenButtonClick);
-
-// grayButton.addEventListener('click', onGrayButtonClick);
-
-// clearButton.addEventListener('click', onClearButtonClick);
+// var storeReference = document.getElementById('storeInfo');
+// storeReference.addEventListener('submit', addNewStore);
