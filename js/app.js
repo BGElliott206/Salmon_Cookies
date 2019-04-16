@@ -135,28 +135,23 @@ CapitolHill.dailyStats();
 alki.dailyStats();
 renderFooter();
 
-// Add New Store event
-// var addNewStore (event) {
-//   event.preventDefault();
+function addNewStore(event) {
 
-//   var storeName = document.getElementById('storeName').value;
-//   var minCustomer = document.getElementById('minCustomer').value;
-//   var maxCustomer = document,getElementById('maxCustomer').value;
-//   var avgCookieSale = document.getElementById('avgCookieSale').value;
-//   var minimumCustomerNumber = event.target.minCustomer.value;
+  console.log('New store is added');
+  event.preventDefault();
 
-//   console.log(minCustomer);
+  var newStoreName = event.target.storename.value;
+  var newMinimumCustomers = event.target.minimumcustomers.value;
+  var newMaximumCustomers = event.target.maximumcustomers.value;
+  var newAverageCookieSale = event.target.averagecookiesale.value;
 
-//   var newStore = new Store(Number(minCustomer), Number(maxCustomer), Number (avgCookieSale), storeName);
+  var newLocation = new Location(newStoreName, newMinimumCustomers, newMaximumCustomers, newAverageCookieSale);
+  newLocation.render();
+  allStores.push(newLocation);
 
-//   var tableBody = document.getElementById('storeLocation');
-//   tableBody.append(newStore.render());
-//   location.push(newStore);
+  referenceTable.textContent = '';
+}
 
-//   var footer = document.getElementById('totalCookies');
-//   footer.innerHTML = '';
-//   renderFooter (location);
-// }
+var newStoreFormReference = document.getElementById('add-new-store');
+newStoreFormReference.addEventListener('submit', addNewStore);
 
-// var storeReference = document.getElementById('storeInfo');
-// storeReference.addEventListener('submit', addNewStore);
