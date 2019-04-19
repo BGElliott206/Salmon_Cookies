@@ -2,6 +2,8 @@ body {
     background-color: rgb(114, 36, 36)
 }
 
-table {
+table, td {
     border: 1px solid black;
+    background-color: rgb(197, 176, 176);
+    
 }

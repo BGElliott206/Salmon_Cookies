@@ -8,13 +8,20 @@
     </head>
 
     <body>
-        <header>
+        
+            </header>
 
             <h1>
                 Salmon Cookies
             </h1>
+           
 
-            <form id ="new-store">
+                <table id="cookie-stand"></table>
+            
+            </header>
+            
+         <main>
+            <form id ="add-new-store">
                 <fieldset>
                     <legend>Add a new store</legend>
 
@@ -22,24 +29,20 @@
                     <input id="storename" type="text" required/>
 
                     <label for="minimumcustomers">Minimum Customers:</label>
-                    <input id="minimumcustomers" type="text" required/>
+                    <input id="minimumcustomers" type="number" required/>
 
                     <label for="maximumcustomers">Maximum Customers:</label>
-                    <input id="maximumcustomers" type="text" required/>
+                    <input id="maximumcustomers" type="number" required/>
+
+                    <label for="averageookiesale">Average Cookies Sold:</label>
+                    <input id="averagecookiesale" type="number" required/>
 
                     <button>Add New Store</button>
 
-
                 </fieldset>
             </form>
-            
-        </header>
-        <main>
-
-            <table id="cookie-stand"></table>
-        
-
         </main>
+        
         <script src="js/app.js"> </script>
     </body>
 </html>
